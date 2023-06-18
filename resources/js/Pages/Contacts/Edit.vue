@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Head, useForm, router } from "@inertiajs/vue3"
+import { Head, useForm, router, Link } from "@inertiajs/vue3"
 import TextInput from "@/Shared/TextInput.vue"
 import SelectInput from "@/Shared/SelectInput.vue"
 import LoadingButton from "@/Shared/LoadingButton.vue"
@@ -93,5 +93,16 @@ const restore = () => {
         >
       </div>
     </form>
+
+     <!-- Navigate to another dialog route -->
+    <Link
+      class="btn-indigo my-6 flex w-full items-center justify-center px-6 py-4 text-center"
+      :href="`/contacts/${contact.id + 1}/edit`"
+      tabindex="-1"
+      preserve-state
+      preserve-scroll>
+      Got to next Contact >
+   </Link>
+
   </Modal>
 </template>
