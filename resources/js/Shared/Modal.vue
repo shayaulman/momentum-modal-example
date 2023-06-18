@@ -1,8 +1,13 @@
 <script lang="ts" setup>
+import { onMounted } from "vue"
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle } from "@headlessui/vue"
 import { useModal } from "momentum-modal"
 
 const { show, close, redirect } = useModal()
+
+onMounted(() => {
+  console.log("Modal mounted")
+})
 </script>
 
 <template>
